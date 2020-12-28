@@ -64,15 +64,17 @@ app.get("/posts/:postName", function(req, res){
 
   const requestedTitle= _.lowerCase(req.params.postName); //adds - to the names of the title
 
+
   posts.forEach(function(post){
     const storedTitle = _.lowerCase(post.title);
 
     if (storedTitle === requestedTitle){
-      console.log("Exists");
+      res.render("post", {
+        title: post.title,
+        content: post.content
+        });
     }
-    else {
-      console.log("Not a match");
-    };
+    
   });
 });
 
