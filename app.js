@@ -34,6 +34,18 @@ app.get("/contact", function(req,res){
 
 });
 
+app.get("/compose", function(req,res){
+
+  res.render("compose"); //passing the variable of ejs from home.ejs and forming a key value pair
+
+});
+
+app.post("/compose", function(req,res){
+  req.body.postTitle
+
+
+});
+
 
 
 
