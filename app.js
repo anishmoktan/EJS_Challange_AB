@@ -15,10 +15,14 @@ app.set('view engine', 'ejs'); //uses ejs
 app.use(bodyParser.urlencoded({extended: true})); //uses body parser
 app.use(express.static("public")); //tell our static files are in the public folder
 
+let posts = [];
 
 app.get("/", function(req,res){
 
-  res.render("home", {startingContent: homeStartingContent}); //passing the variable of ejs from home.ejs and forming a key value pair
+  res.render("home", {
+    startingContent: homeStartingContent,
+    posts: posts
+    }); //passing the variable of ejs from home.ejs and forming a key value pair
 
 });
 
@@ -40,9 +44,17 @@ app.get("/compose", function(req,res){
 
 });
 
-app.post("/compose", function(req,res){
-  req.body.postTitle
 
+
+app.post("/compose", function(req,res){
+
+  const post = { 
+    title:req.body.postTitle,
+    content: req.body.postBody
+  };
+
+  posts.push(post);
+  res.redirect("/");
 
 });
 
