@@ -16,7 +16,11 @@ app.use(bodyParser.urlencoded({extended: true})); //uses body parser
 app.use(express.static("public")); //tell our static files are in the public folder
 
 
+app.get("/", function(req,res){
 
+  res.render("home", {startingContent: homeStartingContent}); //passing the variable of ejs from home.ejs and forming a key value pair
+
+});
 
 
 
