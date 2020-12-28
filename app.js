@@ -22,7 +22,17 @@ app.get("/", function(req,res){
 
 });
 
+app.get("/about", function(req,res){
 
+  res.render("about", {aboutContent: aboutContent}); //passing the variable of ejs from home.ejs and forming a key value pair
+
+});
+
+app.get("/contact", function(req,res){
+
+  res.render("contact", {contactContent: contactContent}); //passing the variable of ejs from home.ejs and forming a key value pair
+
+});
 
 
 
