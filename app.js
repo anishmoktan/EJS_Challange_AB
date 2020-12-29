@@ -45,6 +45,12 @@ app.get("/compose", function(req,res){
 
 });
 
+app.get("/gallery", function(req,res){
+
+  res.render("gallery"); //passing the variable of ejs from home.ejs and forming a key value pair
+
+});
+
 
 
 app.post("/compose", function(req,res){
