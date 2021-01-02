@@ -52,7 +52,6 @@ app.get("/gallery", function(req,res){
 });
 
 
-
 app.post("/compose", function(req,res){
 
   const post = { 
